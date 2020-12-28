@@ -15,6 +15,9 @@ public abstract class Scarpa {
 	@Column(name = "id_scarpe")
 	private int id;
 	
+	@Column(name = "code")
+    private String code;
+	
 	@Column(name = "genere")
     private Genere gender;
 	
@@ -35,9 +38,8 @@ public abstract class Scarpa {
     
     public Scarpa() {}
     
-	public Scarpa(int id, Genere gender, String descrizione, Colore color, Misura numero, String brand, double costo) {
+	public Scarpa(Genere gender, String descrizione, Colore color, Misura numero, String brand, double costo) {
 		super();
-		this.id = id;
 		this.gender = gender;
 		this.descrizione = descrizione;
 		this.color = color;
@@ -46,18 +48,25 @@ public abstract class Scarpa {
 		this.costo = costo;
 	}
 
-
-
+	
 	public int getId() {
 		return id;
 	}
-
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	public String getCode() {
+		return code;
+	}
+
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+	
+	
 	public Genere getGender() {
 		return gender;
 	}

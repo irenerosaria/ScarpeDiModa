@@ -29,13 +29,5 @@ public class Carrello {
 		return istanza;
 	}
 
-	public void addItem(String id, Integer quantity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-
 
 }

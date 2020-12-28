@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import it.begear.corso.entity.Employee;
 import it.begear.corso.entity.Scarpa;
 
 public class DAOscarpaImpl implements DAOscarpa {
@@ -74,6 +75,20 @@ public class DAOscarpaImpl implements DAOscarpa {
 		Scarpa scarpa = (Scarpa) session.load(Scarpa.class, id);
 		session.close();
 		System.out.println("Scarpa trovata!");
+		return scarpa;
+	}
+	
+	@Override
+	public Scarpa findByCode(String code) {                        // new                  
+		Session session = getSessionFactory().openSession();
+		Scarpa scarpa = null;
+		List<Scarpa> scarpaList = read();      
+    	for(Scarpa sc : scarpaList) {
+    		if(scarpa.getCode().equals(code)) {
+    			scarpa = sc;
+    			break;
+    		}
+    	}
 		return scarpa;
 	}
 
