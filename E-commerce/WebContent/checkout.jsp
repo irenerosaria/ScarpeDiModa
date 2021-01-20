@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <%@ page contentType="text/html; charset=UTF-8" %>
@@ -184,30 +184,30 @@ body {margin:0;}
         	<h2>Checkout</h2>
             <h5><strong>INFORMAZIONI DI SPEDIZIONE</strong></h5>
             <div class="content_half float_l checkout">
-			  Nome completo (deve essere lo stesso della carta di credito):  
-                <input type="text"  style="width:300px;"  />
+			  Nome completo (deve essere lo stesso della carta di credito):
+                <input type="text"  style="width:300px;" required>
                 <br />
                 <br />
               Indirizzo:
-				<input type="text"  style="width:300px;"  />
+				<input type="text"  style="width:300px;" required>
                 <br />
                 <br />
               Città:
-                <input type="text"  style="width:300px;"  />
+                <input type="text" style="width:300px;"  required>
                 <br />
                 <br />
               Paese:
-                <input type="text"  style="width:300px;"  />
+                <input type="text"  style="width:300px;" required>
             </div>
             
             <div class="content_half float_r checkout">
               E-MAIL
-				<input type="text"  style="width:300px;"  />
+				<input type="text"  style="width:300px;"  required>
                 <br />
                 <br />
               TELEFONO<br />
 				<span style="font-size:10px">Per favore, specifica un tuo numero di telefono valido. POTREMMO CHIAMARTI PER VERIFICARE E COMPLETARE L'ORDINE.</span>
-                <input type="text"  style="width:300px;"  />
+                <input type="text"  style="width:300px;" required>
             </div>
             
             <% Object prezzo_totale = request.getSession(false).getAttribute("prezzo_totale"); %>
@@ -215,9 +215,9 @@ body {margin:0;}
             <div class="cleaner h50"></div>
             <h3>CARRELLO DELLA SPESA</h3>
             <h4>IMPORTO TOTALE: <strong> <%= prezzo_totale.toString() %> € </strong></h4>
-			<p><input type="checkbox" />
+			<p><input type="checkbox" required/>
 			Accetto i <a href="#">termini di utilizzo</a> di questo sito web.</p>
-            <table style="border:1px solid #CCCCCC;" width="100%">
+            <table style="border:1px solid #CCCCCC;" width="100%" >
                 <tr>
                     <td height="80px"> <img src="IMAGES/paypal.gif" alt="paypal" /></td>
                     <td width="400px;" style="padding: 0px 20px;">Consigliato se hai un account PayPal. Tempi di consegna più rapidi.
@@ -229,6 +229,7 @@ body {margin:0;}
                     </td>
                     <td  width="400px;" style="padding: 0px 20px;">2Checkout.com, Inc. è un rivenditore autorizzato di beni e servizi. 2CheckOut accetta gli ordini dei clienti tramite assegni online, Visa, MasterCard, Discover, American Express, Diners, JCB e carte di debito con il logo Visa, Mastercard. </td>
                     <td><a href="MakeOrderServlet" class="more">2CHECKOUT</a></td>
+                   
                 </tr>
             </table>
         </div> 
