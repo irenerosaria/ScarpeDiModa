@@ -12,7 +12,7 @@ import javax.persistence.Transient;
 
 public class Utente {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // stiamo dicendo al databse che questo ID sarà settato in modo automatico
 	@Column(name = "id_utenti")
 	  private int id;
 	
