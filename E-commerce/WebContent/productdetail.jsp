@@ -222,7 +222,7 @@ body {margin:0;}
                         <td> <%= numero %> </td>
                     </tr>
                     <tr>
-                        <td>Modello:</td>
+                        <td>Brand:</td>
                         <td> <%= brand %> </td>
                     </tr>
                     <tr>
